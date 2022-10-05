@@ -1,0 +1,268 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.preloader{
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    background-color: #1a1a1d;
+    color: #feffff;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.zindex-menu{
+    z-index: 3;
+}
+.zindex-land{
+    z-index: 2;
+}.zindex-player{
+    z-index: 1;
+}.zindex-enemy{
+    z-index: 1;
+    
+}.zindex-background{
+    z-index: 0;
+}
+
+
+#main-menu
+,#restart-menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #feffff;
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+#main-menu div:nth-child(2),
+#main-menu div:nth-child(3),
+#restart-menu div:nth-child(2),
+#restart-menu div:nth-child(3){
+    margin-top: 2rem;
+    /* background-color: red; */
+    width: 10rem;
+    border: 1px solid #1a1a1d;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+    justify-content: center;
+    height: 3rem;
+}
+#restart-menu{
+    display: none;
+}
+
+
+#background{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: calc(100% - 40px);
+    /* background:url('./Assets/background.jpeg'); */
+    background-size: cover;
+    display: flex;
+}
+.bg1{
+    position: relative;
+    height: 100%;
+    min-width: 110%;
+    animation: bg1 5s linear infinite;
+}.bg2{
+    position: relative;
+    height: 100%;
+    min-width: 110%;
+    animation: bg2 5s linear infinite;
+}
+@media screen and (max-width:371px) {
+    .bg1,.bg2{
+        min-width: 120%;
+    }
+}
+@keyframes bg1 {
+    0%{
+        left: 0;
+    }
+    100%{
+        left:-100%;
+    }
+}
+@keyframes bg2 {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -100%;
+    }
+}
+.game-buttons{
+    /* background-color: red; */
+    width: 100%;
+    position: absolute;
+    bottom: 5rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+.scores{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e6e6e6;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    width: 100%;
+    height: 3rem;
+    /* background-color: red; */
+}
+#current-score{
+    margin-left: 3rem;
+}#high-score{
+    margin-right: 3rem;
+}
+.game-btn{
+    position: relative;
+    bottom: 0;
+    border-radius: 100%;
+    border: 4px solid goldenrod;
+    background-color: transparent;
+    color: goldenrod;
+    width: 5rem;
+    height: 5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#game-box{
+    width: 100%;
+    height: 240px;
+    position: relative;
+    background-color: #e6e6e6;
+    border: 2px solid black;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #1a1a1d;
+}
+#player{
+    width: 20px;
+    height: 50px;
+    /* background-color: red; */
+    position: relative;
+    top: 150px;
+    /* box-shadow:  0 0 5px rgba(0, 0, 0, 0.436); */
+    left: 40px;
+}
+#player img{
+    position: relative;
+    bottom: 15px;
+    width: 450%;
+    height: 150%;
+}
+
+.playerCrawl{
+    animation: crawl 1.5s linear;
+}
+.playerJump{
+    animation: jump .5s linear;
+}
+
+@keyframes crawl{
+    0%{
+        /* height: 50px; */
+        top: 150px;
+    }
+    5%{
+        top: 175px;
+    }
+    30%{
+        /* height: 25px; */
+        top: 175px;
+    }
+    70%{
+        /* height: 25px; */
+        top: 175px;
+    }      89%{
+        /* height: 25px; */
+        top: 175px;
+    }   
+    100%{
+        /* height: 50px; */
+        top: 150px;
+    }
+}
+#land{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    /* background-color: red; */
+    background: url('./Assets/land.png');
+    background-size: contain;
+}
+#enemy{
+    width: 20px;
+    height: 20px;
+    /* background-color: green; */
+    position: relative;
+    top: 130px;
+    /* box-shadow:  0 0 5px rgba(0, 0, 0, 0.436); */
+    left: 100%;
+    animation: enemyMotion 2s linear infinite;
+    /* animation-delay: 3s; */
+}
+#enemy img{
+    position: relative;
+    bottom: 10px;
+    width: 170%;
+    height: 170%;
+}
+@keyframes jump{
+    0%{
+        top: 150px;
+    }
+    30%{
+        top: 100px;
+    }
+    70%{
+        top: 100px;
+    }   
+    100%{
+        top: 150px;
+    }
+}
+@keyframes enemyMotion{
+    0%{
+        left: 110%;
+    }
+    100%{
+        left:0;
+    }
+}

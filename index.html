@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="preloader" class="preloader">
+        Loading...
+    </div>
+
+    <div id="main-menu" class="zindex-menu">
+        <div class="title">Cube Jumper</div>
+        <div id="start-btn">start</div>
+        <div id="options-btn">options</div>
+    </div>
+
+    <div id="restart-menu" class="zindex-menu">
+        <div class="title">Cube Jumper</div>
+        <div id="restart-btn">restart</div>
+        <div id="quit-btn">quit</div>
+    </div>
+
+    <div id="game-box">
+        <div id="background" class="zindex-background">
+            <div class="bg1">
+                <img src="./Assets/background.jpeg" alt="">
+            </div>
+            <div class="bg2">
+                <img src="./Assets/background.jpeg" alt="">
+            </div>
+        </div>
+        <div id="player" class="zindex-player">
+            <img src="./Assets/player.png" alt="">
+        </div>
+        <div id="enemy" class="zindex-enemy">
+            <img src="./Assets/enemy.png" alt="">
+        </div>
+        <div id="land" class="zindex-land"></div>
+        <audio id="jump-sound" src="./Assets/jump.mp3"></audio>
+        <audio id="crash-sound" src="./Assets/crash.mp3"></audio>
+        <audio id="crawl-sound" src="./Assets/crawl.mp3"></audio>
+
+
+    </div>
+
+    <div class="scores">
+        <div id="current-score">
+            SCORE : <span id="current-score-board">2</span>
+        </div>
+        <div id="high-score">
+            HIGH SCORE : <span id="high-score-board">2</span>
+        </div>
+    </div>
+
+    <div class="game-buttons">
+        <button id="jump-btn" class="game-btn">Jump</button>
+        <button id="shoot-btn" class="game-btn">Crawl</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const preloader = document.getElementById('preloader');
+        document.onreadystatechange = function () {
+            preloader.style.display="flex";
+            if (document.readyState === "complete") {
+                preloader.style.display="none";
+            }
+        }
+    </script>
+</body>
+
+</html>
